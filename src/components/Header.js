@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 
 const titleMap = [
   { match: /^\/call(\/|$)?/, title: '呼ぶ' },
+  { match: /^\/ai(\/|$)?/, title: 'AIレコメンド' },
   { match: /^\/reservecomfirm(\/|$)?/, title: '予約管理' },
   { match: /^\/reservehistory(\/|$)?/, title: '履歴予約' },
   { match: /^\/menu(\/|$)?/, title: 'メニュー' },
