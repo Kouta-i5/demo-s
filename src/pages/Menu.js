@@ -5,7 +5,7 @@ import React from 'react';
 export default function Menu() {
   return (
     <Box p={2}>
-      <Typography variant="h5">メニュー画面(開発しない)</Typography>
+      <Typography variant="h5">メニュー 画面</Typography>
     </Box>
   );
 }

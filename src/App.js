@@ -1,4 +1,4 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
@@ -8,10 +8,13 @@ import ReserveComfirm from './pages/ReserveComfirm';
 import ReserveHistory from './pages/ReserveHistory';
 
 function App() {
+  const location = useLocation();
+  const isCall = location.pathname === '/call';
+  const headerVisible = !isCall;
   return (
     <div className="App">
-      <Header />
-      <div style={{ paddingTop: 64, paddingBottom: 80 }}>
+      {headerVisible && <Header />}
+      <div style={{ paddingTop: headerVisible ? 64 : 0, paddingBottom: isCall ? 0 : 'var(--footer-height)' }}>
         <Routes>
           <Route path="/call" element={<Call />} />
           <Route path="/reservecomfirm" element={<ReserveComfirm />} />

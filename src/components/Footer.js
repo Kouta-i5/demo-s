@@ -18,7 +18,7 @@ const tabs = [
 export default function Footer() {
   const location = useLocation();
   const navigate = useNavigate();
-  const current = tabs.find((t) => location.pathname.startsWith(t.value))?.value || '/a';
+  const current = tabs.find((t) => location.pathname.startsWith(t.value))?.value || '/call';
 
   return (
     <Paper
@@ -38,6 +38,7 @@ export default function Footer() {
         onChange={(e, value) => navigate(value)}
         showLabels
         sx={{
+          height: 'var(--footer-height)',
           '& .MuiBottomNavigationAction-root': {
             color: 'text.secondary',
           },
