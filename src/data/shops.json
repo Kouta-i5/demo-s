@@ -1,0 +1,57 @@
+[
+  {
+    "id": "s1",
+    "name": "海鮮丼 はまさき",
+    "lat": 35.5581,
+    "lng": 139.6543,
+    "usage": "dining",
+    "description": "新鮮な地魚の海鮮丼が人気",
+    "budget": 2500,
+    "category": "和食",
+    "coupon": true
+  },
+  {
+    "id": "s2",
+    "name": "YOKOHAMA SKY PARK",
+    "lat": 35.4635,
+    "lng": 139.6221,
+    "usage": "sightseeing",
+    "description": "展望デッキからの夜景が絶景",
+    "budget": 0,
+    "coupon": false
+  },
+  {
+    "id": "s3",
+    "name": "ラーメン 昇龍",
+    "lat": 35.5072,
+    "lng": 139.6188,
+    "usage": "dining",
+    "description": "濃厚豚骨スープが自慢",
+    "budget": 900,
+    "category": "ラーメン",
+    "coupon": false
+  },
+  {
+    "id": "s4",
+    "name": "カフェ ルミエール",
+    "lat": 35.4478,
+    "lng": 139.6425,
+    "usage": "dining",
+    "description": "自家焙煎コーヒーとチーズケーキ",
+    "budget": 1200,
+    "category": "カフェ",
+    "coupon": true
+  },
+  {
+    "id": "s5",
+    "name": "港の見える丘公園",
+    "lat": 35.4385,
+    "lng": 139.6533,
+    "usage": "sightseeing",
+    "description": "バラ園が美しい丘の公園",
+    "budget": 0,
+    "coupon": false
+  }
+]
+
+

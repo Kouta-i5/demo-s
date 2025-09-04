@@ -17,11 +17,14 @@ import TextField from '@mui/material/TextField';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import Typography from '@mui/material/Typography';
+import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const cuisineOptions = ['和食', '寿司', 'ラーメン', '焼肉', '居酒屋', 'カフェ', 'おまかせ'];
 
 export default function AiRecommend() {
+  const navigate = useNavigate();
   const [numPeople, setNumPeople] = useState(2);
   const [category, setCategory] = useState('sightseeing'); // 'dining' | 'leisure' | 'sightseeing'
   const [budgetRange, setBudgetRange] = useState([1000, 5000]); // [min,max] JPY per person
@@ -45,10 +48,26 @@ export default function AiRecommend() {
     });
   };
 
-  const submit = () => {
-    // v0: ひとまず値をログに出す（将来API呼び出しに置換）
-    // eslint-disable-next-line no-console
-    console.log({ numPeople, category, budgetRange, cuisines, note });
+  const submit = async () => {
+    const query = { numPeople, category, budgetRange, cuisines, note };
+    // 保存（結果画面で参照できるように）
+    try { localStorage.setItem('ai-recommend-query', JSON.stringify(query)); } catch (_) {}
+
+    // axiosでAPI呼び出し（8秒タイムアウト）
+    try {
+      const res = await axios.post(
+        'https://m19fp220pc.execute-api.ap-southeast-2.amazonaws.com/dev',
+        query,
+        { timeout: 8000, headers: { 'Content-Type': 'application/json' } }
+      );
+      // eslint-disable-next-line no-console
+      console.log('recommend API response:', res.data);
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('recommend API error:', error);
+    }
+
+    navigate('/ai/result');
   };
 
   // 再抽選ロジックは現状未使用

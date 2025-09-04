@@ -3,6 +3,7 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import AiRecommend from './pages/AiRecommend';
+import AiResult from './pages/AiResult';
 import Call from './pages/Call';
 import Menu from './pages/Menu';
 import ReserveComfirm from './pages/ReserveComfirm';
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/call" element={<Call />} />
           <Route path="/ai" element={<AiRecommend />} />
+          <Route path="/ai/result" element={<AiResult />} />
           <Route path="/reservecomfirm" element={<ReserveComfirm />} />
           <Route path="/reservehistory" element={<ReserveHistory />} />
           <Route path="/menu" element={<Menu />} />

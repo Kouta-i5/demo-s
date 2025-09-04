@@ -30,7 +30,7 @@ export default function Header() {
         ) : (
           <Box sx={{ width: 48, mr: 1 }} />
         )}
-        <Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>{current}</Typography>
+        <Typography variant="h6" sx={{ flexGrow: 1, textAlign: 'center' }}>{pathname.startsWith('/ai/result') ? 'レコメンド結果' : current}</Typography>
         <Box sx={{ width: 48, mr: 1 }} />
       </Toolbar>
     </AppBar>
